@@ -1,0 +1,112 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+$bannerColor: linear-gradient(to right, rgb(200, 200, 200), rgb(151, 151, 151), rgb(200, 200, 200));
+$footerColor: linear-gradient(to right, rgb(151, 151, 151), rgb(200, 200, 200), rgb(151, 151, 151));
+$cyan: #18F0E9;
+$green: #0CF86B;
+$blue: #0C83F8;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    background-color: rgb(235, 235, 235);
+}
+.head {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font: 18px helvetica, sans-serif;
+    color: white;
+}
+.head-content {
+    background: $bannerColor;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center;
+    background-size: 100% auto;
+    padding-block: 5rem;
+    
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        top: 100%;
+        left: 0;
+        background: linear-gradient(to right, $cyan, $green, $blue);
+    }
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    font: 18px helvetica, sans-serif;
+    color: white;
+}
+
+.footer-content {
+    background: $footerColor;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center;
+    background-size: 100% auto;
+    padding-block: 5rem;
+
+    display: flex;
+    justify-content: space-around;
+    
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        top: 0;
+        left: 0;
+        background: linear-gradient(to right, $cyan, $green, $blue);
+    }
+}
+
+.bodyContainer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 8rem 4rem;
+    flex: 1;
+    .card {
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0px 30px 40px -20px rgb(46, 62, 68);
+        padding: 15px 30px;
+        margin: auto 20px;
+
+        max-width: 500px;
+        height: 300px;
+
+        .imgContainer {
+            overflow: hidden;
+            max-width: 100px;
+            float: right;
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.cyan {
+    border-top: 3px solid $cyan;
+}
+.green {
+    border-top: 3px solid $green;
+}
+.blue {
+    border-top: 3px solid $blue;
+}
